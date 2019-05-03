@@ -1,0 +1,96 @@
+Error:
+Odoo Server Error
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 654, in _handle_exception
+    return super(JsonRequest, self)._handle_exception(exception)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 312, in _handle_exception
+    raise pycompat.reraise(type(exception), exception, sys.exc_info()[2])
+  File "/usr/lib/python3/dist-packages/odoo/tools/pycompat.py", line 87, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 696, in dispatch
+    result = self._call_function(**self.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 344, in _call_function
+    return checked_call(self.db, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 97, in wrapper
+    return f(dbname, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 337, in checked_call
+    result = self.endpoint(*a, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 939, in __call__
+    return self.method(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 517, in response_wrap
+    response = f(*args, **kw)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 962, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/main.py", line 954, in _call_kw
+    return call_kw(request.env[model], method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 747, in call_kw
+    return _call_kw_model_create(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 727, in _call_kw_model_create
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-214>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/digest/models/res_users.py", line 12, in create
+    user = super(ResUsers, self).create(vals)
+  File "<decorator-gen-208>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/sales_team/models/res_users.py", line 17, in create
+    user = super(ResUsers, self).create(vals)
+  File "<decorator-gen-181>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/note/models/res_users.py", line 17, in create
+    user = super(Users, self).create(values)
+  File "<decorator-gen-131>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/auth_signup/models/res_users.py", line 216, in create
+    user = super(ResUsers, self).create(values)
+  File "<decorator-gen-130>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/res_users.py", line 90, in create
+    user = super(Users, self).create(values)
+  File "<decorator-gen-94>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_single
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/res_users.py", line 1112, in create
+    user = super(UsersView, self).create(values)
+  File "<decorator-gen-92>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 451, in _model_create_multi
+    return create(self, [arg])
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/res_users.py", line 925, in create
+    return super(UsersImplied, self).create(vals_list)
+  File "<decorator-gen-87>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 452, in _model_create_multi
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/res_users.py", line 438, in create
+    users = super(Users, self.with_context(default_customer=False)).create(vals_list)
+  File "<decorator-gen-3>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 452, in _model_create_multi
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3527, in create
+    for data in parent_data_list
+  File "<decorator-gen-485>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 452, in _model_create_multi
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base_automation/models/base_automation.py", line 231, in create
+    action._process(action._filter_post(records))
+  File "/usr/lib/python3/dist-packages/odoo/addons/base_automation/models/base_automation.py", line 205, in _process
+    self.action_server_id.with_context(**ctx).run()
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_actions.py", line 582, in run
+    res = func(action, eval_context=eval_context)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_actions.py", line 492, in run_action_object_create
+    res[exp.col1.name] = exp.eval_value(eval_context=eval_context)[exp.id]
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_actions.py", line 648, in eval_value
+    expr = safe_eval(line.value, eval_context)
+  File "/usr/lib/python3/dist-packages/odoo/tools/safe_eval.py", line 348, in safe_eval
+    c = test_expr(expr, _SAFE_OPCODES, mode=mode)
+  File "/usr/lib/python3/dist-packages/odoo/tools/safe_eval.py", line 207, in test_expr
+    code_obj = compile(expr, "", mode)
+  File "<string>", line 1
+    record name
+              ^
+SyntaxError: unexpected EOF while parsing
